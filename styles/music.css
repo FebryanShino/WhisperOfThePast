@@ -1,0 +1,190 @@
+.third-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: .5rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 1rem 6.1rem;
+}
+
+.third-page > .song-list {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border-radius: 15px;
+  border: 1px solid black;
+  width: 100%;
+  height: 80%;
+  overflow-y: auto;
+}
+
+
+.song-list > div {
+  padding: .25rem 1rem;
+  transition: background 300ms ease;
+}
+
+.song-list > div:hover {
+  background: hsl(0, 0%, 50%);
+}
+
+
+.third-page > .container {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  width: 100%;
+}
+
+.container > form {
+  display: flex;
+  width: 100%;
+}
+
+.container > form > input {
+  width: 70%;
+  padding: .3rem;
+  font-weight: 500;
+  border-top-left-radius: 1rem;
+  border: 1px solid black;
+}
+
+.container > form > button {
+  width: 30%;
+  background: black;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-top-right-radius: 1rem;
+  transition: background 300ms ease;
+}
+
+.container > .player-back {
+  height: 100%;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center 0%;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+  transition: background-image 300ms ease;
+}
+
+
+.container > .player-back > .player {
+  background: linear-gradient(
+    0deg,
+    rgba(0,0,0,.7),
+    rgba(0,0,0,.3)
+  );
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: .3rem;
+  width: 100%;
+  height: 100%;
+  padding: (.5rem, 5vw, 4rem) .5rem;
+}
+
+.player > h4 {
+  width: 98%;
+  text-align: center;
+  color: white;
+}
+.player > h6 {
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+}
+
+.stamp-container {
+  background: rgba(0,0,0,.1);
+  width: 90%;
+  height: .1rem;
+  display: flex;
+  align-items: center;
+}
+
+.player > .stamp-container > .timestamp {
+  width: 100%;
+  height: 150%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background-color: #9a9f99;
+  transition: transform 50ms ease;
+}
+
+
+.player-btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: clamp(80%, 5vh, 100%);
+}
+
+
+.player-btn > .download,
+.player-btn > .rewind {
+  height: 70%;
+  aspect-ratio: 1/1;
+  background-color: rgba(0,0,0,.1);
+  backdrop-filter: blur(2px);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-btn > .play {
+  background-color: rgba(0,0,0,.5);
+  backdrop-filter: blur(5px);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 50%;
+}
+
+
+.player-btn > .play > svg path,
+.player-btn > .rewind > svg path {
+  fill: white;
+}
+
+
+.player-btn > .rewind > svg {
+  height: 70%;
+}
+
+
+
+@media (min-width: 40rem) {
+  .third-page {
+    width: 90%;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .third-page > .song-list {
+    width: 100%;
+    height: 100%;
+  }
+
+  .third-page > .container {
+    height: 100%;
+    width: 50%;
+  }
+}
+
+.hidden {
+  display: none;
+}

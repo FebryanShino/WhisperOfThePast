@@ -1,0 +1,158 @@
+:root {
+  --first: white;
+  --second: black;
+  --third: dodgerblue;
+
+  --img: url("https://is5-ssl.mzstatic.com/image/thumb/Music125/v4/0a/86/f3/0a86f317-78d7-fe7e-f279-e835a0ac51c7/cover.jpg/632x632bb.webp");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  max-height: 100vh;
+  overflow-x: hidden;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+
+section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+}
+
+
+.navigation-bar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--first);
+  border: 1px solid hsl(0,0%,80%);
+  height: 4rem;
+  z-index: 9999;
+  transition:
+    background 300ms ease,
+    border-top 300ms ease;
+}
+
+.navigation-bar button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transform: translateY(-50%);
+  color: var(--second);
+  font-weight: 500;
+  font-size: .7rem;
+}
+
+.navigation-bar .nav-btn {
+  flex-direction: column;
+  background: var(--first);
+  border: 1px solid var(--second);
+  border-radius: 10px;
+  /* padding: .2rem .5rem; */
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  transition:
+    background .3s ease-in-out,
+    color .3s ease-in-out;
+}
+
+svg {
+  width: 1.5rem;
+}
+svg path {
+  transition: fill .3s ease-in-out;
+}
+.active > svg path {
+  fill: var(--first);
+}
+
+.navigation-bar > button:hover,
+.navigation-bar > .active {
+  background: var(--second);
+  color: var(--first);
+}
+
+.navigation-bar > button:hover > svg path {
+  fill: var(--first);
+}
+
+
+.navigation-bar > .nav-center {
+  font-size: 2rem;
+  transform: translateY(-50%);
+  padding: .5rem;
+  border-radius: 50%;
+  background: var(--second);
+  border: none;
+}
+
+.nav-center > svg {
+  width: 3rem;
+}
+
+.nav-center > svg path {
+  fill: var(--first);
+}
+
+
+@media (min-width: 40rem) {
+  section {
+    width: 92%;
+    right: 0;
+  }
+
+  .navigation-bar {
+    width: 8%;
+    height: 100%;
+    left: 0;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .3rem;
+    padding: .3rem;
+    flex-direction: column;
+  }
+  .navigation-bar .nav-btn {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .navigation-bar > button {
+    transform: translateY(0);
+  }
+  
+  .navigation-bar > .nav-center {
+    margin-top: auto;
+    order: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.hidden {
+  display: none;
+}
+
+.yippie {
+  background: grey;
+}

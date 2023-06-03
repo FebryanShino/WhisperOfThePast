@@ -1,0 +1,135 @@
+.second-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.second-page > .date-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 30rem;
+  width: 100%;
+  padding: .3rem;
+}
+
+.date-container > .datetime {
+  background-image: var(--img);
+  background-size: cover;
+  position: relative;
+  height: 100%;
+  border-radius: .5rem;
+  /* background: hsl(0,0%,90%); */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 999;
+  overflow: hidden;
+  color: white;
+}
+
+@keyframes open {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+.datetime::before {
+  position: absolute;
+  content: "";
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.5) 60%,
+    rgba(0,0,0,1)
+  );
+  backdrop-filter: blur(20px);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  margin: 0;
+  z-index: -1;
+}
+
+.datetime::after {
+  position: absolute;
+  content: "";
+  background: hsl(0,0%,90%);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  margin: 0;
+  transform-origin: top;
+  animation: open 1000ms ease forwards;
+}
+                        
+
+.datetime > .date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.datetime > .weather {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  transition: opacity 300ms ease;
+}
+
+
+
+.weather > .weather-icon svg {
+  width: 100%;
+}
+.weather-icon svg path {
+  fill: white;
+}
+.weather-icon svg:nth-child(3) path {
+  fill: none;
+  stroke: white;
+}
+
+
+.datetime > .weather > .info {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.datetime > .time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time > input {
+  text-align: right;
+  border: none;
+  background: none;
+  font-weight: 800;
+  color: white;
+}
+
+.date-container > button {
+  width: 99.9%;
+  align-self: center;
+  padding: 1.5rem 1rem 1rem;
+  transform: translateY(-100%);
+  border: none;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  transition: transform 300ms ease;
+  font-weight: 800;
+  background: black;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
