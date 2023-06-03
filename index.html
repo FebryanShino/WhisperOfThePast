@@ -5,11 +5,11 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   {% for style in styles%}
-  <link rel="stylesheet" href="static/styles/{{style}}"/>
+  <link rel="stylesheet" href="styles/{{style}}"/>
   {% endfor %}
   
   <link rel="icon" href="https://pbs.twimg.com/media/FxHUDOlaAAAS98E?format=jpg&name=medium">
-  <link rel="manifest" href="{{url_for('static', filename='manifest.json')}}" />
+  <link rel="manifest" href="manifest.json" />
   
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
   
@@ -268,9 +268,9 @@
 
 
   <script>
-    let audioFileUrl = "{{ url_for('static', filename='audio.mp3') }}";
+    let audioFileUrl = "audio.mp3";
   </script>
 
-  <script src="static/index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
