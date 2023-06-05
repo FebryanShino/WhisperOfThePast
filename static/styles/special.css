@@ -26,6 +26,7 @@
 .desc > .desc-back {
   background-image: url("https://pbs.twimg.com/media/FxHUDOlaAAAS98E?format=jpg&name=medium");
   background-size: cover;
+  background-position: center 0%;
   color: white;
   display: flex;
   flex-direction: column;
