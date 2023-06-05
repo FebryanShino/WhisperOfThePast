@@ -54,7 +54,7 @@ timeContainer.addEventListener('click', () => {
 
   timeContainer.style.animation = 'fade 2000ms ease infinite';
   
-  fetch('/api/time', {
+  fetch(FebryanShino + '/api/time', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -125,7 +125,7 @@ const weatherAPI = (city=null, callback) => {
   if(city === null) {
     city = 'Tokyo, Japan';
   }
-  fetch('api/weather', {
+  fetch(FebryanShino + 'api/weather', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -162,7 +162,7 @@ weatherIconContainer.addEventListener('click', () => {
 
   weatherIconContainer.style.animation = 'fade 2000ms ease infinite';
   
-  fetch('/api/voice', {
+  fetch(FebryanShino + '/api/voice', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
