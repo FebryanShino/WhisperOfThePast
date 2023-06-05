@@ -1,0 +1,16 @@
+{
+  "name": "Shinomiya",
+  "short_name": "Shinomiya",
+  "description": "",
+  "start_url": "https://portfolio.febryanshino.repl.co",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "https://pbs.twimg.com/media/FxHUDOlaAAAS98E?format=jpg&name=medium",
+      "sizes": "1024x1024",
+      "type": "image/jpg"
+    }
+  ],
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}
