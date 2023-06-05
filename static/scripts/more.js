@@ -121,10 +121,7 @@ const toggleWeather = (weather) => {
 
 let weatherIconContainer = document.querySelector('.weather');
 
-const weatherAPI = (city=null, callback) => {
-  if(city === null) {
-    city = 'Tokyo, Japan';
-  }
+const weatherAPI = (city='Tokyo, Japan', callback) => {
   fetch(FebryanShino + '/api/weather', {
     method: 'POST',
     headers: {
@@ -151,7 +148,7 @@ inputButton.addEventListener('click', () => {
   });
 });
 
-weatherAPI(null, function() {});
+weatherAPI('Tokyo, Japan', function() {});
 
 
 weatherIconContainer.addEventListener('click', () => {
