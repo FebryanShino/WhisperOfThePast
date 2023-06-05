@@ -137,7 +137,7 @@ musicForm.addEventListener('submit', (event) => {
 
   button.textContent = 'Loading';
 
-  fetch('/api/youtube', {
+  fetch(FebryanShino + '/api/youtube', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
