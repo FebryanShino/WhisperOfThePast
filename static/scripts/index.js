@@ -18,7 +18,7 @@ let set = document.querySelector('#set');
 let about = document.querySelector('#about');
 let navColle = [home, more, set, about];
 
-const themeColor = document.querySelector('meta[name="theme-color"]');
+let themeColor = document.querySelector('meta[name="theme-color"]');
 let navCenter = document.querySelector('.nav-center');
 
 let firstPage = document.querySelector('.first-page');
