@@ -125,7 +125,7 @@ const weatherAPI = (city=null, callback) => {
   if(city === null) {
     city = 'Tokyo, Japan';
   }
-  fetch(FebryanShino + 'api/weather', {
+  fetch(FebryanShino + '/api/weather', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
