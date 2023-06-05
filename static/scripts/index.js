@@ -1,4 +1,6 @@
-fetch('/api/database')
+const FebryanShino = 'https://portfolio.febryanshino.repl.co';
+
+fetch(FebryanShino + '/api/database')
   .then(response => response.json())
   .then(data => {
     let tracks = data.music;
