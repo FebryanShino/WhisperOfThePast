@@ -60,7 +60,7 @@ refreshButton.addEventListener('click', () => {
 
 
   
-  fetch('/api/danbooru', {
+  fetch(FebryanShino + '/api/danbooru', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
