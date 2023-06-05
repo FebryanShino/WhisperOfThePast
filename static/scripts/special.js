@@ -20,8 +20,8 @@ for(let i = 0; i < 10; i++) {
   image.setAttribute('data-file', 'https://youtu.be/dQw4w9WgXcQ');
   image.setAttribute('data-tags', 'Undifined');
   image.setAttribute('data-artist', 'Undifined');
-  image.setAttribute('data-sample', 'https://pbs.twimg.com/media/FxMvk9haAAA_q-7?format=jpg&name=medium');
-  image.src = 'https://pbs.twimg.com/media/FxMvk9haAAA_q-7?format=jpg&name=medium';
+  image.setAttribute('data-sample', 'https://cdn.donmai.us/sample/cd/6f/__shiina_mahiru_otonari_no_tenshi_sama_ni_itsu_no_mani_ka_dame_ningen_ni_sarete_ita_ken_drawn_by_hanekoto__sample-cd6f4f2f188060731e2e4e4bf6aebd6d.jpg');
+  image.src = 'https://cdn.donmai.us/sample/cd/6f/__shiina_mahiru_otonari_no_tenshi_sama_ni_itsu_no_mani_ka_dame_ningen_ni_sarete_ita_ken_drawn_by_hanekoto__sample-cd6f4f2f188060731e2e4e4bf6aebd6d.jpg';
 
   imgContainer.appendChild(image);
   
