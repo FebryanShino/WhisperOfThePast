@@ -1,12 +1,12 @@
 .third-page {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   gap: .5rem;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding: 2rem 1rem 6.1rem;
+  padding: 2rem 1rem 4rem;
 }
 
 .third-page > .song-list {
