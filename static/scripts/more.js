@@ -49,6 +49,22 @@ const datetime = () => {
 datetime();
 setInterval(datetime, 1000 * 60);
 
+
+const textPopUp = (audio, text) => {
+  let textContainer = document.querySelector('.date-container > h5');
+
+  textContainer.textContent = text;
+  textContainer.style.transform = 'translateY(-100%)';
+  
+  audio.play();
+  audio.addEventListener('timeupdate', () => {
+    if(audio.currentTime === audio.duration) {
+      textContainer.style.transform = 'translateY(-200%)';
+    }
+  });
+}
+
+
 timeContainer.addEventListener('click', () => {
   let audio = document.querySelector('.time > audio');
 
@@ -69,6 +85,7 @@ timeContainer.addEventListener('click', () => {
       audio.src = data.voice;
       audio.load();
       audio.play();
+      textPopUp(audio, data.text);
     });
   
 });
@@ -121,6 +138,10 @@ const toggleWeather = (weather) => {
 
 let weatherIconContainer = document.querySelector('.weather');
 
+
+
+
+
 const weatherAPI = (city=null, callback) => {
   if(city === null) {
     city = 'Tokyo, Japan';
@@ -154,11 +175,18 @@ inputButton.addEventListener('click', () => {
 weatherAPI(null, function() {});
 
 
+
+
+
+
+
+
 weatherIconContainer.addEventListener('click', () => {
   let temp = weatherInfo.firstElementChild.textContent;
   let status = weatherInfo.lastElementChild.textContent;
   let audio = document.querySelector('.weather > audio');
   let location = weatherInfo.getAttribute('data-location');
+  
 
   weatherIconContainer.style.animation = 'fade 2000ms ease infinite';
   
@@ -178,7 +206,9 @@ weatherIconContainer.addEventListener('click', () => {
       weatherIconContainer.style.animation = 'none';
       audio.src = data.voice;
       audio.load();
-      audio.play();
+
+      textPopUp(audio, data.text);
     });
 });
+
 

@@ -8,6 +8,7 @@ const loadProjects = (projects) => {
     
     let link = document.createElement('a');
     link.href = project[2];
+    link.setAttribute('target', '_blank');
     item.style.backgroundImage = `url(${project[1]})`;
   
   
@@ -44,7 +45,56 @@ const periodicSine = (radians) => {
 // });
 
 
+const homepageBurger = document.querySelector('.first-burger-container');
 
+homepageBurger.addEventListener('click', () => {
+  let active = homepageBurger.getAttribute('data-active');
+  let burgerPart = homepageBurger.children;
+  let burgerMenu = document.querySelector('.first-page > .burger-menu');
+
+  if(active === 'false') {
+    burgerPart[0].style.transform = 'rotate(45deg)';
+    burgerPart[1].style.transform = 'rotate(-45deg)';
+
+    burgerMenu.style.transform = 'translateX(0)';
+
+    homepageBurger.setAttribute('data-active', 'true');
+
+    
+
+    
+  } else {
+    burgerPart[0].style.transform = 'translateY(-150%)';
+    burgerPart[1].style.transform = 'translateY(150%)';
+
+    burgerMenu.style.transform = 'translateX(100%)';
+
+
+    homepageBurger.setAttribute('data-active', 'false');
+  }
+
+
+});
+
+
+// let switchCounter = 0;
+
+// const switchStyle = () => {
+//   const titleText = document.querySelectorAll('.text > h1 > span');
+  
+
+//   if(switchCounter === 0) {
+//     titleText[0].style.background = 'var(--title)';
+//     titleText[1].style.background = 'white';
+//     switchCounter = 1;
+//   } else {
+//     titleText[0].style.background = 'white';
+//     titleText[1].style.background = 'var(--title)';
+//     switchCounter = 0;
+//   }
+// }
+
+// setInterval(switchStyle, 1000);
 
 
 const cardContainer = document.querySelector('.hover-box');

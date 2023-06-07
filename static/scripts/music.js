@@ -101,7 +101,7 @@ playButton.addEventListener('click', () => {
   }
 });
 
-audio.addEventListener("timeupdate", () => {
+audio.addEventListener('timeupdate', () => {
   let duration = audio.duration;
   let current = audio.currentTime;
   let ratio = current/duration;
