@@ -12,6 +12,20 @@
   }
 }
 
+:root {
+  --grad-1: #d05a4a;
+  --grad-2: #e51049;
+  --grad-3: #f8c27c;
+  --grad-4: #d05a4a;
+  --title: linear-gradient(
+    135deg,
+    var(--grad-1),
+    var(--grad-2),
+    var(--grad-3),
+    var(--grad-4)
+  );
+}
+
 
 .first-page {
   display: flex;
@@ -19,7 +33,8 @@
   height: 100%;
   padding-bottom: 7rem;
   overflow-y: auto;
-  background: white;
+  overflow-x: hidden;
+  background: black;
 }
 
 .first-page > .header {
@@ -35,7 +50,7 @@
 .header > h5 {
   position: relative;
   padding: 0 1rem;
-  color: #f8c27c;
+  color: var(--grad-3);
 }
 .header > h5::before {
   content: "";
@@ -63,7 +78,7 @@
   position: absolute;
   inset: 0;
   margin: auto;
-  background-color: #f8c27c;
+  background-color: var(--grad-3);
 }
 
 .first-burger-container > div:nth-child(1) {
@@ -85,6 +100,22 @@
 } 
 
 
+.first-page > .burger-menu {
+  position: absolute;
+  width: 65%;
+  height: 60%;
+  color: white;
+  background: rgba(0,0,0, .6);
+  backdrop-filter: blur(5px);
+  right: 0;
+  z-index: 98;
+  transform: translateX(100%);
+  transition:
+    transform 300ms ease;
+}
+
+
+
 .first-page > .intro {
   display: flex;
   flex-direction: column;
@@ -92,8 +123,8 @@
   width: 100%;
   min-height: 100vh;
   background: black;
-  border-bottom-left-radius: 100% 1rem;
-  border-bottom-right-radius: 100% 1rem;
+  /* border-bottom-left-radius: 100% 1rem; */
+  /* border-bottom-right-radius: 100% 1rem; */
 
 }
 
@@ -107,6 +138,15 @@
   }
 }
 
+@keyframes greyswitch {
+  0%, 100% {
+    filter:saturate(100%);
+  }
+  50% {
+    filter: saturate(135%);
+  }
+}
+
 .intro > .img {
   background-image: url("/static/profile.png");
   background-size: cover;
@@ -116,7 +156,10 @@
   position: relative;
   border-bottom-left-radius: 100% 3rem;
   overflow: hidden;
+  transition: filter 300ms ease;
+  /* animation: greyswitch 5s ease forwards infinite; */
 }
+
 
 .intro > .img::before {
   height: 100%;
@@ -144,25 +187,17 @@
 
 .text > h1 {
   font-family: 'Playfair', sans-serif;
-  color: #f8c27c;
+  color: var(--grad-3);
   font-size: 1.9rem;
   font-weight: 700;
   position: relative;
-}
-
-.text > h1 {
-  background: linear-gradient(
-    135deg,
-    #d05a4a,
-    #e51049,
-    #f8c27c,
-    #d05a4a
-  );
+  background: var(--title);
   background-size: 200%;
   background-position: -130%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 
 .text > h1::before,
@@ -210,7 +245,7 @@
   background: var(--grad);
   background-size: 300%;
   background-position: -80%;
-  padding: .5rem;
+  padding: .5rem 0;
   font-weight: 800;
   text-decoration: none;
   width: 35%;
@@ -248,6 +283,13 @@
   background: none;
   display: flex;
   flex-direction: column;
+  border-top-right-radius: 100% 1.5rem;
+  /* background: linear-gradient(
+    105deg,
+    var(--grad-2),
+    var(--grad-1)
+  ); */
+  background: white;
 }
 
 .project-container > h2 {
@@ -255,9 +297,9 @@
 }
 
 .project-container > .projects {
-  width: 100%;
   display: flex;
   height: 15rem;
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -266,7 +308,7 @@
 }
 
 .projects > .project {
-  border-radius: .5rem;
+  border-radius: .3rem;
   background-size: cover;
   display: flex;
   align-items: flex-end;
@@ -275,6 +317,10 @@
   aspect-ratio: 4/3;
   scroll-snap-align: center;
   transition: transform 300ms ease;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  isolation: isolate;
 }
 
 .project > a {
@@ -294,13 +340,10 @@
   justify-content: center;
   gap: .3rem;
   align-items: center;
-  border-bottom-left-radius: .5rem;
-  border-bottom-right-radius: .5rem;
   transform-origin: bottom;
   transition:
     height 300ms ease,
-    backdrop-filter 300ms ease,
-    border-radius 300ms ease;
+    backdrop-filter 300ms ease
 }
 
 .project > a > h2 {
@@ -324,13 +367,13 @@
 .project:hover > a {
   height: 100%;
   backdrop-filter: blur(6px);
-  border-radius: .5rem;
 }
 
 .project:hover > a > p {
   height: 25%;
   opacity: 1;
 }
+
 
 
 .hover-container {
@@ -351,7 +394,7 @@
   height: 4rem;
   background: hsl(0, 0%, 95%);
   top: 0;
-  z-index: 999;
+  z-index: 97;
 }
 
 
@@ -407,10 +450,14 @@
 
 
 
-@media (min-width: 40rem) {
+@media screen and (min-width: 45rem) {
   .first-page > .intro {
     flex-direction: row;
     min-height: calc(100vh + 1rem);
+  }
+
+  .first-page > .burger-menu {
+    height: calc(100vh + 1rem);
   }
 
 

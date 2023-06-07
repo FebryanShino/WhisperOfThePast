@@ -15,7 +15,7 @@
   background-image: var(--img);
   background-size: cover;
   position: relative;
-  height: 100%;
+  min-height: 100%;
   border-radius: .5rem;
   /* background: hsl(0,0%,90%); */
   padding: 1rem;
@@ -139,6 +139,18 @@
   font-weight: 800;
   background: black;
   color: white;
+}
+
+.date-container > h5 {
+  width: 99.9%;
+  background: blue;
+  padding: 1.5rem 1rem 1rem;
+  transform: translateY(-200%);
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  background: black;
+  color: white;
+  transition: transform 300ms ease;
 }
 
 .hidden {
