@@ -45,6 +45,7 @@ const periodicSine = (radians) => {
 // });
 
 
+
 const homepageBurger = document.querySelector('.first-burger-container');
 
 homepageBurger.addEventListener('click', () => {
@@ -55,14 +56,9 @@ homepageBurger.addEventListener('click', () => {
   if(active === 'false') {
     burgerPart[0].style.transform = 'rotate(45deg)';
     burgerPart[1].style.transform = 'rotate(-45deg)';
-
     burgerMenu.style.transform = 'translateX(0)';
-
     homepageBurger.setAttribute('data-active', 'true');
-
-    
-
-    
+  
   } else {
     burgerPart[0].style.transform = 'translateY(-150%)';
     burgerPart[1].style.transform = 'translateY(150%)';
@@ -72,8 +68,6 @@ homepageBurger.addEventListener('click', () => {
 
     homepageBurger.setAttribute('data-active', 'false');
   }
-
-
 });
 
 
@@ -97,8 +91,9 @@ homepageBurger.addEventListener('click', () => {
 // setInterval(switchStyle, 1000);
 
 
-const cardContainer = document.querySelector('.hover-box');
 
+
+const cardContainer = document.querySelector('.hover-box');
 
 for(let i = 0; i < 10; i++) {
   let card = document.createElement('div');
@@ -126,8 +121,6 @@ refreshButton.addEventListener('click', () => {
     images[i].style.opacity = 0;
   }
 
-
-  
   fetch(FebryanShino + '/api/danbooru', {
     method: 'POST',
     headers: {

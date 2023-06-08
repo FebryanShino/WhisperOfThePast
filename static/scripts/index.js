@@ -1,4 +1,4 @@
-const FebryanShino = 'https://portfolio.febryanshino.repl.co';
+const FebryanShino = '';
 
 
 fetch(FebryanShino + '/api/database')

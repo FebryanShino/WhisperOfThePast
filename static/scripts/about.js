@@ -37,8 +37,8 @@ for(let i = 0; i < about.length; i++) {
   let item = document.createElement('a');
   item.textContent = about[i];
   
-  item.style.animation = 'fadeIn 500ms ease forwards';
-  item.style.animationDelay = i*200 + 'ms';
+  item.style.animation = 'fadeIn 400ms ease forwards';
+  item.style.animationDelay = i*180 + 'ms';
 
   gridContainer.appendChild(item);
 }

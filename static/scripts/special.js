@@ -1,14 +1,10 @@
 
-
-
-
-
-let tagInput = document.querySelector('.inputs > input');
+let tagInput = document.querySelector('.inputs > .search-bar > input');
 let options = document.querySelector('.inputs > .pop');
 
 let orientations = document.querySelectorAll('.orientation > h6');
 
-let searchButton = document.querySelector('.inputs > .pop > button');
+let searchButton = document.querySelector('.inputs > .search-bar > .icon');
 
 
 let imgContainer = document.querySelector('.img-container');
@@ -52,11 +48,17 @@ for(let i = 0; i < orientations.length; i++) {
   });
 }
 
+const searchIcons = document.querySelectorAll('.search-bar > .icon > svg');
 
 searchButton.addEventListener('click', () => {
   let input = tagInput.value;
   let attr = tagInput.getAttribute('data-orientation');
   let images = imgChildren;
+
+  tagInput.setAttribute('data-input', input);
+  searchIcons[0].classList.add('hidden');
+    searchIcons[1].classList.remove('hidden');
+  
 
   for(let i = 0; i < images.length; i++) {
     images[i].style.opacity = 0;
@@ -97,6 +99,20 @@ searchButton.addEventListener('click', () => {
 });
 
 let searchIconPath = document.querySelector('.inputs > .icon > svg path');
+
+
+tagInput.addEventListener('input', () => {
+  let inputValue = tagInput.getAttribute('data-input');
+
+  if(tagInput.value === inputValue) {
+    searchIcons[1].classList.remove('hidden');
+    searchIcons[0].classList.add('hidden');
+  } else {
+    searchIcons[1].classList.add('hidden');
+    searchIcons[0].classList.remove('hidden');
+  }
+
+});
 
 
 tagInput.addEventListener('focus', () => {
