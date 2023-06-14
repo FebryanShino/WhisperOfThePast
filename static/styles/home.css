@@ -70,6 +70,7 @@
   width: auto;
   aspect-ratio: 1/1;
   position: relative;
+  cursor: pointer;
 }
 
 
@@ -91,14 +92,6 @@
   transform: translateY(150%);
   transition: transform 300ms ease;
 }
-
-.first-burger-container:hover > div:nth-child(1) {
-  transform: rotate(45deg);
-}
-
-.first-burger-container:hover > div:nth-child(2) {
-  transform: rotate(-45deg);
-} 
 
 
 .first-page > .burger-menu {

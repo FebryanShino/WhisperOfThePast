@@ -1,6 +1,7 @@
 .second-page {
   display: flex;
   flex-direction: column;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .second-page > .date-container {
@@ -89,6 +90,7 @@
   flex-direction: column;
   align-items: center;
   align-self: center;
+  cursor: pointer;
   transition: opacity 300ms ease;
 }
 
@@ -117,6 +119,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.time > div {
+  cursor: pointer;
 }
 
 .time > input {

@@ -57,6 +57,7 @@ section {
   color: var(--second);
   font-weight: 500;
   font-size: .7rem;
+  cursor: pointer;
 }
 
 .navigation-bar .nav-btn {
