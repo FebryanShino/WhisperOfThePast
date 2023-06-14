@@ -1,4 +1,4 @@
-const FebryanShino = 'https://portfolio.febryanshino.repl.co';
+const FebryanShino = '';
 
 
 fetch(FebryanShino + '/api/database')
@@ -6,9 +6,11 @@ fetch(FebryanShino + '/api/database')
   .then(data => {
     let tracks = data.music;
     let projects = data.project;
+    let about = data.about;
 
     loadProjects(projects);
     loadTracks(tracks);
+    loadAboutPage(about);
   });
 
 

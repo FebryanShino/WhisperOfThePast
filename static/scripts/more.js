@@ -3,7 +3,8 @@ const leadZero = (number) => {
 }
 
 const ordinalNumber = (number) => {
-  let value = number.toString().charAt(number.length-1);
+  let string = number.toString();
+  let value = string.charAt(string.length-1);
   
   if(value == 1) {
     return number + 'st';

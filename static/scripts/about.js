@@ -3,44 +3,37 @@ let burgerContainer = document.querySelector('.burger-container');
 let burgerList = document.querySelector('.burger-list');
 
 burgerButton.addEventListener('click', () => {
-  burgerContainer.classList.remove("hidden");
+  burgerContainer.classList.remove('hidden');
 });
 
 burgerContainer.addEventListener('click', (event) => {
   let isClicked = burgerList.contains(event.target);
   if(!isClicked) {
-    burgerContainer.classList.add("hidden");
+    burgerContainer.classList.add('hidden');
   }
 });
 
-about = [
-  'Store',
-  'Friends',
-  'Assignments',
-  'Travel Log',
-  'Synthesize',
-  'Achieved',
-  'Messages',
-  'Nameless Honor',
-  'Warp',
-  'Characters',
-  'Interastral Guide',
-  'Data Bank',
-  'Bookshelf',
-  'Tutorials'
-];
-
-let gridContainer = document.querySelector('.social');
 
 
-for(let i = 0; i < about.length; i++) {
-  let item = document.createElement('a');
-  item.textContent = about[i];
+
+
+
+const loadAboutPage = (items) => {
+  let gridContainer = document.querySelector('.social');
   
-  item.style.animation = 'fadeIn 400ms ease forwards';
-  item.style.animationDelay = i*180 + 'ms';
-
-  gridContainer.appendChild(item);
+  for(let i = 0; i < items.length; i++) {
+    let item = document.createElement('a');
+    item.textContent = items[i];
+    
+    item.style.animation = 'fadeIn 400ms ease forwards';
+    item.style.animationDelay = i*180 + 'ms';
+  
+    gridContainer.appendChild(item);
+  }
 }
+
+
+
+
 
 
