@@ -423,6 +423,10 @@
   z-index: 97;
 }
 
+.hover-head > h5 {
+  cursor: pointer;
+}
+
 
 .hover-box {
   width: 100%;
