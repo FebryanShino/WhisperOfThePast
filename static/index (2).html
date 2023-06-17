@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Violet Courtyard</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="{{url_for('static', filename='style/index.css')}}" /> 
+  <link rel="icon" href="{{logo}}" />
+  <link rel="manifest" href="{{url_for('static', filename='manifest.json')}}" />
+  <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header id="header">
+    <div class="logo">
+      <h2>Violet Courtyard</h2>
+      <h6>By FebryanS</h6>  
+    </div>
+    <nav class="navbar">
+      <button id="home" onclick="scrollToTop()">Home</button>
+      <button id="about" onclick="scrollBottom()">About</button>
+    </nav>
+  </header>
+  
+  <section class="top">
+    <h2 id="text"></h2>
+    <button id="scroll" onclick="scrollPage()">Continue</button>
+    <img class="sun" id="sun" style="z-index:1" src="{{url_for('static', filename='images/sun.png')}}"/>
+    <div class="parallax">
+       <img id="hill5" style="z-index:1" src="{{url_for('static', filename='images/hill5.png')}}"/>
+      <img id="hill4" style="z-index:2" src="{{url_for('static', filename='images/hill4.png')}}"/>
+      <img id="hill3" style="z-index:4" src="{{url_for('static', filename='images/hill3.png')}}"/>
+      <img id="hill2" style="z-index:5" src="{{url_for('static', filename='images/hill2.png')}}"/>
+      <img id="hill1" style="z-index:6" src="{{url_for('static', filename='images/hill1.png')}}"/>
+    </div>
+  </section>
+        
+  <section class="mid">
+    <div class="info">
+      <div class="greet">
+        <h2 id="welcome" class="welcome"></h2>
+      </div>
+      <div class="desc">
+         <p>
+           <span id="bot-name">ヴァイオレット</span> is a multifunctional bot created by <span id="author">FebryanShino</span><br/>
+           Violet can do everything you want, at least that's what my creator aims<br/><br/>
+           Sincerely,<br/>
+           <span id="bot-name2">ヴァイオレット</span>
+         </p>
+      </div>
+      <a class="server" href="{{invite}}">
+        <h6>Violet Courtyard Server</h6>
+      </a>
+    </div>
+    
+    <a class="violet" href="{{violet_repo}}">
+      <img src="{{logo}}" />
+      <div class="title">
+        <h3>
+          ヴァイオレット
+        </h3>
+        <h6>
+          Violet
+        </h6>
+      </div>
+    </a>
+    <div class="container">
+       <img class="moon" id="moon" src="{{url_for('static', filename='images/moon.png')}}" />
+    </div>
+    <img class="back" src="{{url_for('static', filename='images/back.jpg')}}" />
+    <img class="cave1" src="{{url_for('static', filename='images/cave1.png')}}" />
+    <img class="cave2" src="{{url_for('static', filename='images/cave2.png')}}" />
+  </section>
+
+  <section class="search">
+    <h2>Search Image</h2>
+    <form class="get-post" method="POST">
+      <input name="tags" value ="" />
+      <button class="generate">Generate</button>
+    </form>
+    <div class="container">
+      <img class="post" src="https://pbs.twimg.com/media/FrGOHOnXwAEfBQ1?format=jpg&name=large"/>
+    </div>
+  </section>
+        
+  <section class="bottom">
+    <h2>About Me</h2>
+    <a href="{{github}}">
+      <img src="{{url_for('static',filename='social/github.png')}}" />
+      FebryanShino
+    </a>
+    <div class="social">
+      <a href="{{twitter}}">
+        <img src="{{url_for('static',filename='social/twitter.png')}}" />
+      </a>
+      <a href="{{pixiv}}">
+        <img src="{{url_for('static',filename='social/pixiv.png')}}" />
+      </a>
+    </div>
+    <a class="repo" href="{{repo}}">
+      <h6>Website Repository</h6>
+    </a>
+    
+  </section>
+  <script src="{{url_for('static', filename='script/index.js')}}"></script>
+</body>
+</html>
