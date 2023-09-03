@@ -1,7 +1,15 @@
 const FebryanShino = 'https://portfolio.febryanshino.repl.co';
 
 
-fetch(FebryanShino + '/api/database')
+fetch(FebryanShino + '/api/database', {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    key: ''
+  })
+})
   .then(response => response.json())
   .then(data => {
     let tracks = data.music;
